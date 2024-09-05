@@ -1,0 +1,27 @@
+pip install mpi4py
+pip install disropt
+pip install numpy
+
+All of the following commands will execute the code required to recreate the parts on your machine.
+However, the tests are non-deterministic, so running the code prior to visualising them in the Information Suite jupyter notebook will result in different graphs
+
+mpiexec -np 2 python tester.py uninftest1/ 1 1 2 uninfga
+mpiexec -np 2 python tester.py gatest1/ 1 1 2 ga
+mpiexec -np 2 python tester.py primaltest1/ 1 1 2 primal
+
+mpiexec -np 4 python tester.py multiuninftest/ 1 1 2 uninfga
+mpiexec -np 4 python tester.py multigatest/ 1 1 2 ga
+mpiexec -np 4 python tester.py multiprimaltest/ 1 1 2 primal
+
+mpiexec -np 2 python tester.py impuninftest/ 1 3 3 uninfga
+mpiexec -np 2 python tester.py impgatest/ 1 3 3 ga
+mpiexec -np 2 python tester.py impprimaltest/ 1 3 3 primal
+
+mpiexec -np 2 python tester.py compuninftest/ 2 3 3 uninfga
+mpiexec -np 2 python tester.py compgatest/ 2 3 3 ga
+mpiexec -np 2 python tester.py compprimaltest/ 2 3 3 primal
+
+mpiexec -np 4 python tester.py mcgatest/ 2 3 3 ga
+mpiexec -np 4 python tester.py mcprimaltest/ 2 3 3 primal
+
+mpiexec -np 4 python tester.py testing/ 2 3 3 ga
